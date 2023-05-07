@@ -1,12 +1,14 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink, useMatch } from "react-router-dom";
 
-
-const CustomLink = ({children, to, ...props}) => {
-    return (
-        <Link to={to} {...props}>
-            {children}
-        </Link>
-    );
+const CustomLink = ({ children, to, ...props }) => {
+  const match = useMatch(to);
+  return (
+    <li>
+      <NavLink to={to} {...props}>
+        {children}
+      </NavLink>
+    </li>
+  );
 };
 
 export default CustomLink;

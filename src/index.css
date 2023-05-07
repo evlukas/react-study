@@ -2,6 +2,21 @@
   box-sizing: border-box;
 }
 
+header li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
 :root {
   --color-bg: #2C2C32;
   --color-active: #0f7dc6;
@@ -32,7 +47,7 @@ header > a:hover {
 
 h1 {
   text-align: center;
-  margin-top: 0;
+  margin-top: 20px;
 }
 
 .container {
@@ -59,4 +74,9 @@ main a:hover {
 .active-link {
   color: var(--color-active);
   cursor: default;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
 }
