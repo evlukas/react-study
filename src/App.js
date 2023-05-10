@@ -1,26 +1,27 @@
 import { Route, Routes } from "react-router";
-import Homepage from "./pages/Homepage";
-import Nonefoundpage from "./pages/Nonefoundpage";
-import Blogpage from "./pages/Blogpage";
-import Aboutpage from "./pages/Aboutpage";
-import Layout from "./components/Layout";
-import SinglePage from "./pages/SinglePage";
-import EditPage from "./pages/EditPage";
+import Home from "./pages/Home";
+import Contacts from "./pages/Contacts";
+import About from "./pages/About";
+import NotFound from "./pages/NotFound";
+import MainLayout from "./components/MainLayout";
+import "./App.css";
+import Courses from "./pages/Courses";
+import SingleCourses from "./pages/SingleCourses";
 
 const App = () => {
   return (
-    <>
+    <div className="App">
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Homepage />} />
-          <Route path="about" element={<Aboutpage />} />
-          <Route path="posts" element={<Blogpage />} />
-          <Route path="posts/:id" element={<SinglePage />} />
-          <Route path="posts/:id/edit" element={<EditPage />} />
-          <Route path="*" element={<Nonefoundpage />} />
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="contacts" element={<Contacts />} />
+          <Route path="*" element={<NotFound />} />
+          <Route path="courses" element={<Courses />} />
+          <Route path="courses/:slug" element={<SingleCourses />} />
         </Route>
       </Routes>
-    </>
+    </div>
   );
 };
 
